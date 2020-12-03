@@ -1,6 +1,6 @@
 ###################  项目启动端口  ###################
 server:
-  port: 8080
+  port: 8086
 
 ###################  spring配置  ###################
 spring:
@@ -10,9 +10,16 @@ spring:
 ###################  开发环境的profile  ###################
 ##########################################################
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/test
+    url: jdbc:mysql://127.0.0.1:3306/flowable?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: root
     password: 123456
+
+flowable:
+  #关闭定时任务JOB
+  async-executor-activate: false
+  #  将databaseSchemaUpdate设置为true。当Flowable发现库与数据库表结构不一致时，会自动将数据库表结构升级至新版本。
+  database-schema-update: true
+
 
 logging:
   level.root: info

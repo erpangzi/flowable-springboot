@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -33,7 +34,7 @@ public class ExpenseController {
     private TaskService taskService;
     @Autowired
     private RepositoryService repositoryService;
-    @Autowired
+    @Resource
     private ProcessEngine processEngine;
 
 /***************此处为业务代码******************/
